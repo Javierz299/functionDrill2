@@ -6,3 +6,7 @@ function jediName(firstName,lastName){
 }
 
 jediName('Beyonce','Knowles');
+
+function beyond(num){
+
+}
