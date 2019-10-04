@@ -5,7 +5,7 @@ function jediName(firstName,lastName){
   return `${lastName.slice(0,3)}${firstName.slice(0,2)}`;
 }
 
-jediName('Beyonce','Knowles');
+//jediName('Beyonce','Knowles');
 
 function beyond(num){
   // have no idea what a finite number is
@@ -56,7 +56,7 @@ function decode(encode){
   return cracked.join('');
 }
 let codedMessage = 'craft block argon meter bells brown croon droop';
-decode(codedMessage);
+//decode(codedMessage);
 
 
 
@@ -98,40 +98,42 @@ function leapYear(month,leapYear){
       break;
     default:
       if(!validMonths.includes(mm)){
-        throw '';
+        throw new TypeError('Must provide a valid month');
       }
       //console.log('Must provide a valid');
 
     }
-  }
-  catch(e){
-    console.error('must provied a valid month!');
+  }catch(e){
+    console.error(e);
   }
 
   //console.log(month,leapYear);
 }
 
 
-leapYear('April',2000);
+leapYear('February',2001);
 
 
 
 function letsRock(playerPick){
 //Player
-    
-  if(playerPick === 1){
-    playerPick = 'rock';
-    console.log('rock');
-  } else if (playerPick === 2){
-    playerPick = 'paper';
-    console.log('paper');
-  } else if(playerPick === 3){
-    playerPick = 'scissors';
-    console.log('scissors');
-  } else {
-    console.log('not a valid choice');
-  }
+  try{
+    if(playerPick === 1){
+      playerPick = 'rock';
+      console.log('rock');
+    } else if (playerPick === 2){
+      playerPick = 'paper';
+      console.log('paper');
+    } else if(playerPick === 3){
+      playerPick = 'scissors';
+      console.log('scissors');
+    } else {
+      throw new TypeError('not a valid choice'); //console.log('not a valid choice');
+    }
 
+  }catch(e){
+    console.error(e);
+  }
   //Computer
   const randomNum = Math.floor(Math.random() * 3) + 1;
   let computerPick = randomNum;
@@ -177,4 +179,4 @@ function letsRock(playerPick){
  
 }
 
-letsRock(1);
+//letsRock(3);
