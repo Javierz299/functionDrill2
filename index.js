@@ -113,3 +113,32 @@ function leapYear(month,leapYear){
 
 
 leapYear('April',2000);
+
+
+
+function letsRock(playerNum){
+  if(playerNum === 1){
+    console.log('rock');
+  } else if (playerNum === 2){
+    console.log('paper');
+  } else if(playerNum === 3){
+    console.log('scissors');
+  } else {
+    console.log('not a valid choice');
+  }
+
+  const randomNum = Math.floor(Math.random() * 3) + 1;
+  const computer = randomNum;
+  if(computer === 1){
+    console.log('rock');
+  } else if(computer === 2){
+    console.log('paper');
+  } else if( computer === 3){
+    console.log('scissors');
+  }
+ 
+ 
+  
+}
+
+letsRock(3);
