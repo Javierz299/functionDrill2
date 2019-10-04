@@ -61,47 +61,55 @@ decode(codedMessage);
 
 
 function leapYear(month,leapYear){
-  switch(month)
-  {
-  case 0:
-    month='January';
-    break;
-  case 1:
-    month='February';
-    break;
-  case 2:
-    month='March';
-    break;
-  case 3:
-    month='April';
-    break;
-  case 4:
-    month='May';
-    break;
-  case 5:
-    month='June';
-    break;
-  case 6:
-    month='July';
-    break;
-  case 7:
-    month='August';
-    break;
-  case 8:
-    month='September';
-    break;
-  case 9:
-    month='October';
-    break;
-  case 10:
-    month='November';
-    break;
-  case 11:
-    month='December';
-    break;
-  default:
-    month='Must provide a valid month';
+  let validMonths = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+ 
+  
+  //if(leapYear % 4 === 0 && leapYear % 100 !== 0 || leapYear % 400 === 0)
+
+  let mm = month;
+  var numDays;
+  try {
+    switch(mm){
+    case 'January':
+    case 'March':
+    case 'May':
+    case 'July':
+    case 'August':
+    case 'October':
+    case 'December':
+      numDays = 31;
+      console.log(`${month} has ${numDays} days`);
+      break;
+    case 'April':
+    case 'June':
+    case 'September':
+    case 'November':
+      numDays = 30;
+      console.log(`${month} has ${numDays} days`);
+      break;
+    case 'February':
+      if(leapYear % 4 === 0 ? leapYear % 100 === 0 : leapYear % 400 === 0){
+        numDays = 29;
+        console.log(`${month} has ${numDays} days`);
+      } else {
+        numDays = 28;
+        console.log(`${month} has ${numDays} days`);
+      }
+      break;
+    default:
+      if(!validMonths.includes(mm)){
+        throw '';
+      }
+      //console.log('Must provide a valid');
+
+    }
   }
-   
+  catch(e){
+    console.error('must provied a valid month!');
+  }
+
+  //console.log(month,leapYear);
 }
-leapYear();
+
+
+leapYear('April',2000);
