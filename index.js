@@ -116,29 +116,65 @@ leapYear('April',2000);
 
 
 
-function letsRock(playerNum){
-  if(playerNum === 1){
+function letsRock(playerPick){
+//Player
+    
+  if(playerPick === 1){
+    playerPick = 'rock';
     console.log('rock');
-  } else if (playerNum === 2){
+  } else if (playerPick === 2){
+    playerPick = 'paper';
     console.log('paper');
-  } else if(playerNum === 3){
+  } else if(playerPick === 3){
+    playerPick = 'scissors';
     console.log('scissors');
   } else {
     console.log('not a valid choice');
   }
 
+  //Computer
   const randomNum = Math.floor(Math.random() * 3) + 1;
-  const computer = randomNum;
-  if(computer === 1){
+  let computerPick = randomNum;
+  if(computerPick === 1){
+    computerPick = 'rock';
     console.log('rock');
-  } else if(computer === 2){
+  } else if(computerPick === 2){
+    computerPick = 'paper';
     console.log('paper');
-  } else if( computer === 3){
+  } else if( computerPick === 3){
+    computerPick = 'scissors';
     console.log('scissors');
   }
+
+  if(playerPick === computerPick){
+    console.log('its a tie');
+  }
+
+  if(playerPick === 'rock'){
+    if(computerPick === 'scissors'){
+      console.log('ROCK wins!');
+    } else {
+      console.log('you lose!');
+    }
+  }
+
+  if(playerPick === 'paper'){
+    if(computerPick === 'rock'){
+      console.log('PAPER wins!');
+    } else {
+      console.log('you lose!');
+    }
+  }
+
+  if(playerPick === 'scissors'){
+    if(computerPick === 'rock'){
+      console.log('ROCK wins!');
+    } else {
+      console.log('you lose');
+    }
+  }
+
  
- 
-  
 }
 
-letsRock(3);
+letsRock(1);
